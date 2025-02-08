@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name = "viewport" content="width=device-width, inital-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link  rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a></li>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class = "info" id="home">
+        <div class="container">
+            <div class="img">
+                <img src="/images/R2.png">
+            </div>
+            <div class="description">
+                <div class="name">
+                    Hello, I'm 
+                    <span class ="text-gradient">
+                        Ronny
+                    </span>
+                </div>
+                <div class="job">
+                    Software Engineering 
+                    <span class="text-gradient">
+                        Student
+                    </span>
+                </div>
+                <div class ="content">
+                    At Curitn 
+                    <span class="text-gradient">
+                        University
+                    </span>
+                </div>
+
+                <div class="summary">
+                    <span id="intro-text"></span>
+                    <span class="console-underscore" id="console">&#95;</span>
+                    <br>
+                    <span id="specialty-text" class="text-gradient"></span>
+
+                </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {    
+                    function typeText(sentence, elementID, callback){
+                        let i=0;
+                        let element = document.getElementById(elementID);
+                        let speed = 50;
+            
+                        function typing() {
+                            if(i < sentence.length) {
+                                element.innerHTML += sentence.charAt(i);
+                                i++;
+                                setTimeout(typing, speed);
+                            } else {
+                                callback();
+                            }
+                        }
+                        typing();
+                    }
+
+                    function hideCursor() {
+                        document.getElementById("console").style.display = "none";
+                    }
+            
+                    typeText("Highly motivated final-year student with a solid foundation in", "intro-text", hideCursor);
+
+
+                    var typed = new Typed('#specialty-text', {
+                            strings: ['Machine Learning', 'Software Development', 'Data Structues'],
+                            typeSpeed: 50,
+                            backSpeed: 50,
+                            loop: true
+                    });
+                });
+            </script>
+            <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+            
+                <div class="social-media">
+                    <ul>
+                        <li>
+                            <a href="https://www.linkedin.com/in/raunak-arora-ronny/" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Ronny-Arora" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://medium.com/@raunakrarora" target="_blank">
+                                <i class="fab fa-medium-m"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
