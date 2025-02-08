@@ -95,8 +95,7 @@ header nav a:hover::after{
 
 #home .description{
     position: absolute;
-    top: 30%;
-    transform: translateY(-50%);
+    top: 120px;
     left: -100px;
     width: 8000px;
     max-width: 80%;
@@ -105,14 +104,14 @@ header nav a:hover::after{
 #home .description .name,
 #home .description .job,
 #home .description .content{
-    font-size: 4em;
+    font-size: 3em;
     font-family: Righteous;
-    line-height: 1em;
+    line-height: 1.5em;
 }
 
 .text-gradient{
     background-image: linear-gradient(
-        to right, #6c4dee, #d4145a
+        to right, #ff8a00, #e52e71
     );
     display: inline-block;
     -webkit-text-fill-color: transparent;
@@ -120,13 +119,15 @@ header nav a:hover::after{
 }
 
 .social-media{
-    position: absolute;
-    bottom: -400px;
+    position: fixed;
+    bottom: 100px;
+    left: 60px;
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 .social-media ul{
+    position: absolute;
     display: flex;
     justify-content: left;
     list-style: none;
@@ -173,7 +174,7 @@ header nav a:hover::after{
     text-align: left;
     font-size: 2em;
     color: #fff;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 #specialty-text {
@@ -199,3 +200,30 @@ header nav a:hover::after{
     }
 }
 
+.download-btn {
+    background-color:  #1E90FF;
+    color: white;
+    width: 200px;
+    border: square;
+    border-color: white;
+    border-radius: 5%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+    position: absolute;
+    top: 380px;
+}
+
+.download-btn:hover {
+    background-image: linear-gradient(45deg, #ff8a00, #e52e71);
+    color: white;
+}
+
+.social-media p{
+    text-align: left;
+    color: #fff;
+    font-size: 1em;
+    margin-top: 60px;
+    font-weight: 400;
+    margin-left: 10px;
+}
