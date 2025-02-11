@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Khula:700');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
 *{
     margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
@@ -10,77 +12,70 @@ body
     margin: 0;
     background: rgb(12, 0, 40);
     color: #fff;
-    font-size: 13px;
+    font-size: 1rem;
 }
 
-a{
-    text-decoration: none;
-    cursor: pointer;
+.navbar {
+    background-color: rgb(44, 137, 219);
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-header{
-    width: 100%;
-    position: fixed;
-    z-index: 100;
-    text-align: center;
-    margin-top: 0px;
-    background-color: rgb(44, 137, 219);
-    padding: 20px 0;
-}
-header nav a{
-    color: #fff;
-    font-size: 20px;
-    margin: 0 40px;
+.navbar-nav .nav-link {
     position: relative;
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-header nav a::after{
+.navbar-nav .nav-link::after {
     content: '';
+    display: block;
     width: 0;
     height: 3px;
     background: #ff004f;
     position: absolute;
     left: 0;
-    bottom: -6px;
-    transition: 0.5s;
-}
+    bottom: -5px;
+    transition: width 0.3s ease-in-out;
+} 
 
-header nav a:hover::after{
+.navbar-nav .nav-link:hover::after {
     width: 100%;
 }
 
-.rightSection{
-    
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-.rightSection img{
-    margin-top: -200px;
-    margin-right: 20px;
-    transition: 0.3s ease;
+.navbar-toggler {
+    border: none;
 }
 
-.rightSection img:hover{
-    transform: scale(1.1);
+.navbar-toggler-icon {
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
 }
+
+
 
 .info{
     width: 100%;
     height: 100vh;
     overflow: hidden;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.info .container{
-    width: 1140px;
-    max-width: 100%;
-    height: 100%;
-    padding-top: 60px;
-    box-sizing: border-box;
-    margin: auto;
-    position: relative;
+.container {
+    max-width: 1140px;
+    padding-top: 80px;
 }
 
 #home .img{
@@ -89,56 +84,44 @@ header nav a:hover::after{
 }
 
 #home .img img{
-    height: 100%;
-    margin-right: -200px;
+    height: auto;
+    max-width: 100%;
 }
 
 #home .description{
-    position: absolute;
-    top: 120px;
-    left: -100px;
-    width: 8000px;
-    max-width: 80%;
+    text-align: left;
 }
 
 #home .description .name,
 #home .description .job,
 #home .description .content{
-    font-size: 3em;
-    font-family: Righteous;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-family: 'Righteous';
     line-height: 1.5em;
 }
 
 .text-gradient{
-    background-image: linear-gradient(
-        to right, #ff8a00, #e52e71
-    );
+    background-image: linear-gradient(to right, #ff8a00, #e52e71);
     display: inline-block;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
 
 .social-media{
-    position: fixed;
-    bottom: 100px;
-    left: 60px;
-    width: 100%;
+    position: relative;
+    margin-top: 30px;
     text-align: left;
 }
 
 .social-media ul{
-    position: absolute;
     display: flex;
     justify-content: left;
-    list-style: none;
-    padding: 0;
+    gap: 10px;
 }
+
 
 .social-media ul li a{
     margin: 0 10px;
-}
-
-.social-media ul li a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,6 +133,7 @@ header nav a:hover::after{
     border-radius: 50%;
     transition: 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0,0,0, 0.2);
+    text-decoration: none;
 }
 
 .social-media ul li:nth-child(1) a:hover{
@@ -172,7 +156,7 @@ header nav a:hover::after{
 
 .summary{
     text-align: left;
-    font-size: 2em;
+    font-size: 1.5rem;
     color: #fff;
     margin-top: 60px;
 }
@@ -180,11 +164,13 @@ header nav a:hover::after{
 #specialty-text {
     font-weight: bold;
     display: inline-block;
-    color: transparent;
+    text-align: center;
     background-image: linear-gradient(90deg, #ff8a00, #e52e71);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .console-underscore{
     display: inline-block;
@@ -200,23 +186,26 @@ header nav a:hover::after{
     }
 }
 
+
+
 .download-btn {
     background-color:  #1E90FF;
     color: white;
-    width: 200px;
-    border: square;
+    width: auto;
+    border: none;
     border-color: white;
     border-radius: 5%;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.2rem;
     transition: background-color 0.3s ease, background-image 0.3s ease;
-    position: absolute;
-    top: 380px;
-}
+    display: block;
+    margin: 20px 0;
 
+}
 .download-btn:hover {
     background-image: linear-gradient(45deg, #ff8a00, #e52e71);
     color: white;
+
 }
 
 .social-media p{
@@ -226,4 +215,156 @@ header nav a:hover::after{
     margin-top: 60px;
     font-weight: 400;
     margin-left: 10px;
+}
+
+@media (max-width: 576px) {
+    
+    #speciality-text{
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    #home .img img{
+        max-width: 50%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    #home .description{
+        margin-top: 1rem;
+        text-align: center;
+    }
+    
+    .navbar-brand{
+        font-size: 1rem;
+    }
+
+    .navbar-nav .nav-link{
+        font-size: 0.85rem;
+    }
+
+    .description .name, .description .job, .description .content {
+        font-size: 1rem;
+    }
+
+    .summary {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    .download-btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        width: 100%;
+    }
+
+    .social-media{
+        text-align: center;
+    }
+
+    .social-media ul {
+        justify-content: center;
+    }
+    .social-media ul li a {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        margin: 5px;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .navbar-brand{
+        font-size: 1.2rem;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    .description .name,
+    .description .job,
+    .description .content {
+        font-size: 1.5rem;
+    }
+
+    .summary {
+        font-size: 1rem;
+    }
+
+    .social-media ul li a{
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .download-btn {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .navbar-brand{
+        font-size: 1.5rem;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 1.2rem;
+    }
+
+    .description .name,
+    .description .job,
+    .description .content {
+        font-size: 2rem;
+    }
+
+    .summary {
+        font-size: 1.2rem;
+    }
+
+    .social-media ul li a{
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+    .download-btn {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar-brand{
+        font-size: 1.8rem;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 1.3rem;
+    }
+
+    .description .name,
+    .description .job,
+    .description .content {
+        font-size: 2.5rem;
+    }
+
+    .summary {
+        font-size: 1.5rem;
+    }
+
+    .social-media ul li a{
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .download-btn {
+        font-size: 1.2rem;
+        padding: 0.7rem 1.8rem;
+    }
 }
