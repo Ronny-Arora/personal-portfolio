@@ -3,121 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronny Arora - Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link  rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Ronny Arora</a>
+    <!-- 3D Tilt Background -->
+    <div class="tilt-background"></div>
+    
+    <!-- Matrix Rain Effect -->
+    <canvas id="matrix-canvas"></canvas>
+    
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    
+    <!-- Interactive Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand glitch-effect" href="#" data-text="Ronny Arora">Ronny Arora</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link magnetic-btn" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link magnetic-btn" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link magnetic-btn" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link magnetic-btn" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link magnetic-btn" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class = "info" id="home">
-        <div class="container text-left">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-6 col-md-12 order-lg-last text-center">
-                    <img src="images/R2.png" class="img-fluid" alt="Profile Image">
-            </div>
-            <div class="col-lg-6 col-md-12">
-                <div class="description">
-                    <div class="name">Hello, I'm 
-                        <span class ="text-gradient">Ronny</span>
-                </div>
-                <div class="job">Software Engineering 
-                    <span class="text-gradient">Student</span>
-                </div>
-                <div class ="content">At
-                    <span class="text-gradient">Curtin University</span>
-                </div>
 
-                <div class="summary">
-                    <span id="intro-text"></span>
-                    <span class="console-underscore" id="console">&#95;</span>
-                    <br>
-                    <span id="specialty-text" class="text-gradient"></span>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content fade-in">
+                    <!-- Animated Code Block -->
+                    <div class="code-block mb-4">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="code-title">portfolio.js</span>
+                        </div>
+                        <div class="code-content">
+                            <span class="code-comment">// Welcome to my digital universe</span><br>
+                            <span class="code-keyword">const</span> <span class="code-variable">developer</span> = {<br>
+                            &nbsp;&nbsp;<span class="code-property">name</span>: <span class="code-string">"Raunak (Ronny) Arora"</span>,<br>
+                            &nbsp;&nbsp;<span class="code-property">passion</span>: <span class="code-string">"Creating Amazing Experiences"</span><br>
+                            &nbsp;&nbsp;<span class="code-property">currently</span>: <span class="code-string">"Business Analyst Intern @ Macmahon"</span>
+                            };
+                        </div>
+                    </div>
 
+                    <div class="hero-title reveal-text">
+                        Hello, I'm <span class="text-gradient neon-glow">Ronny</span>
+                    </div>
+                    <div class="hero-subtitle reveal-text">
+                        Software Engineering <span class="text-gradient holographic-text">Student</span>
+                    </div>
+                    <div class="hero-subtitle reveal-text">
+                        At <span class="text-gradient">Curtin University</span>
+                    </div>
+                    
+                    <!-- Interactive Stats -->
+                    <div class="stats-container">
+                        <div class="stat-item glass-card">
+                            <div class="stat-number" data-target="14">0</div>
+                            <div class="stat-label">HD/Distinction Units</div>
+                        </div>
+                        <div class="stat-item glass-card">
+                            <div class="stat-number" data-target="3">0</div>
+                            <div class="stat-label">Hackathon Wins</div>
+                        </div>
+                        <div class="stat-item glass-card">
+                            <div class="stat-number" data-target="10">0</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-description">
+                        <span id="intro-text"></span>
+                        <span class="console-underscore" id="console">&#95;</span>
+                    </div>
+
+                    <div class="typing-container">
+                        <span id="specialty-text"></span>
+                    </div>
+
+                    <!-- Interactive Download Button -->
+                    <div class="mt-4">
+                        <a href="RaunakArora_Resume.pdf" download="RaunakArora_Resume.pdf">
+                            <button class="btn btn-primary-custom pulse-btn magnetic-btn">
+                                <span class="btn-content">
+                                    <i class="fas fa-download me-2"></i>
+                                    <span>Download Resume</span>
+                                </span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                        </a>
+                    </div>
+
+                    <!-- Enhanced Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/raunak-arora-ronny/" target="_blank" class="social-link magnetic-btn" data-tooltip="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                            <div class="social-ripple"></div>
+                        </a>
+                        <a href="https://github.com/Ronny-Arora" target="_blank" class="social-link magnetic-btn" data-tooltip="GitHub">
+                            <i class="fab fa-github"></i>
+                            <div class="social-ripple"></div>
+                        </a>
+                        <a href="https://medium.com/@raunakrarora" target="_blank" class="social-link magnetic-btn" data-tooltip="Medium">
+                            <i class="fab fa-medium-m"></i>
+                            <div class="social-ripple"></div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 hero-image fade-in">
+                    <div class="text-center">
+                        <!-- 3D Floating Image Container -->
+                        <div class="floating-container">
+                            <div class="floating-card glass-card">
+                                <!-- Geometric Shapes Background -->
+                                <div class="geometric-shapes">
+                                    <div class="shape shape-1"></div>
+                                    <div class="shape shape-2"></div>
+                                    <div class="shape shape-3"></div>
+                                </div>
+                                
+                                <img src="./images/R1.jpg" class="profile-img" alt="Ronny Arora">
+                                
+                                <!-- Skill Tags Floating Around Image -->
+                                <div class="floating-tag tag-1">React</div>
+                                <div class="floating-tag tag-2">Python</div>
+                                <div class="floating-tag tag-3">Node.js</div>
+                                <div class="floating-tag tag-4">ML</div>
+                                
+                                <!-- Scan Line Effect -->
+                                <div class="scan-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="text-start">
-                <a href="Ronny_Arora_Resume.pdf" download="Ronny_Arora_Resume.pdf">
-                    <button class="download-btn">Download Resume</button>
-                </a>
+        </div>
+        
+    </section>
+<section class="section about-section" id="about">
+  <div class="container">
+    <h2 class="section-title fade-in text-center">About Me</h2>
+
+    <div class="row align-items-stretch g-4">
+      <!-- LEFT: Journey + Skills -->
+      <div class="col-lg-6 fade-in d-flex">
+        <div class="about-content glass-card h-100 w-100">
+          <h3 class="text-gradient mb-4">My Journey</h3>
+          <p class="mb-4">
+            I'm a passionate final-year Software Engineering student at Curtin University with a strong foundation in full-stack development and machine learning. Currently working as a Business Analyst Intern at Macmahon, I bring a unique blend of technical expertise and business acumen to every project.
+          </p>
+          <p class="mb-4">
+            My journey in tech started with a curiosity about how things work behind the scenes. This curiosity has led me to explore various domains including web development, mobile applications, data science and cloud computing.
+          </p>
+
+          <!-- Skills Progress Bars -->
+          <div class="skills-section">
+            <h4 class="text-gradient mb-3">Technical Skills</h4>
+
+            <div class="skill-item">
+              <div class="skill-info"><span>JavaScript & React</span><span>90%</span></div>
+              <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
             </div>
 
-                <div class="social-media mt-4">
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <a href="https://www.linkedin.com/in/raunak-arora-ronny/" target="_blank">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://github.com/Ronny-Arora" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://medium.com/@raunakrarora" target="_blank">
-                                <i class="fab fa-medium-m"></i>
-                            </a>
-                        </li>
-                    </ul>    
-                    <p><i class="fa fa-copyright"></i>Ronny Arora 2025. All Rights Reserved</p> 
-                </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Python & Machine Learning</span><span>85%</span></div>
+              <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info"><span>Node.js & Backend</span><span>70%</span></div>
+              <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info"><span>Cloud Computing</span><span>70%</span></div>
+              <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Achievements inside a big glass card -->
+      <div class="col-lg-6 fade-in d-flex">
+        <div class="achievements-container glass-card h-100 w-100">
+          <h3 class="text-gradient mb-4">Achievements & Certifications</h3>
+
+          <div class="achievement-grid">
+            <div class="achievement-tile">
+              <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+              <h4>3 Hackathon Wins</h4>
+              <p>Winner at multiple hackathons including TechCrunch Disrupt and HackerEarth</p>
+            </div>
+
+            <div class="achievement-tile">
+              <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+              <h4>14 HD/Distinctions</h4>
+              <p>Consistent high performance across all academic units</p>
+            </div>
+
+            <div class="achievement-tile">
+              <div class="achievement-icon"><i class="fas fa-code"></i></div>
+              <h4>10+ Projects</h4>
+              <p>Full-stack applications, ML models, and mobile apps</p>
+            </div>
+
+            <div class="achievement-tile">
+              <div class="achievement-icon"><i class="fas fa-briefcase"></i></div>
+              <h4>Industry Experience</h4>
+              <p>Business Analyst Intern at Macmahon Holdings</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- To flip sides later: add order-lg-2 to LEFT col and order-lg-1 to RIGHT col -->
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Floating Skills Cloud -->
+    <div class="skills-cloud">
+        <div class="skill-bubble" style="--delay: 0s; --x: 10%; --y: 20%;">JavaScript</div>
+        <div class="skill-bubble" style="--delay: 1s; --x: 80%; --y: 15%;">Python</div>
+        <div class="skill-bubble" style="--delay: 2s; --x: 15%; --y: 70%;">React</div>
+        <div class="skill-bubble" style="--delay: 3s; --x: 75%; --y: 80%;">Machine Learning</div>
+        <div class="skill-bubble" style="--delay: 4s; --x: 50%; --y: 10%;">Node.js</div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="text-secondary copyright-text">
+                    <i class="fa fa-copyright"></i> Ronny Arora 2025. All Rights Reserved
+                </p>
             </div>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
-        document.addEventListener("DOMContentLoaded", function() {    
-            function typeText(sentence, elementID, callback){
-                let i=0;
+        document.addEventListener("DOMContentLoaded", function() {
+            // Custom cursor
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                
+                setTimeout(() => {
+                    cursorFollower.style.left = e.clientX + 'px';
+                    cursorFollower.style.top = e.clientY + 'px';
+                }, 100);
+            });
+
+            // Magnetic effect for buttons
+            document.querySelectorAll('.magnetic-btn').forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    
+                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+                
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0px, 0px)';
+                });
+            });
+
+            // Matrix rain effect
+            const canvas = document.getElementById('matrix-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+            
+            for(let x = 0; x < columns; x++) {
+                drops[x] = 1;
+            }
+            
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(10, 10, 15, 0.04)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = 'rgba(102, 126, 234, 0.7)';
+                ctx.font = fontSize + 'px monospace';
+                
+                for(let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            setInterval(drawMatrix, 35);
+
+            // Animated counter for stats
+            function animateCounter(element, target, duration = 2000) {
+                let start = 0;
+                const increment = target / (duration / 16);
+                
+                function updateCounter() {
+                    start += increment;
+                    if (start < target) {
+                        element.textContent = Math.floor(start);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        element.textContent = target;
+                    }
+                }
+                updateCounter();
+            }
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Animate counters when stats come into view
+                        if (entry.target.classList.contains('stat-number')) {
+                            const target = parseInt(entry.target.getAttribute('data-target'));
+                            animateCounter(entry.target, target);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements
+            document.querySelectorAll('.fade-in, .stat-number').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Reveal text animation
+            document.querySelectorAll('.reveal-text').forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.3}s`;
+            });
+
+            // Typing animation
+            function typeText(sentence, elementID, callback) {
+                let i = 0;
                 let element = document.getElementById(elementID);
                 let speed = 50;
-    
+
                 function typing() {
-                    if(i < sentence.length) {
+                    if (i < sentence.length) {
                         element.innerHTML += sentence.charAt(i);
                         i++;
                         setTimeout(typing, speed);
-                    } else {
+                    } else if (callback) {
                         callback();
                     }
                 }
                 typing();
             }
-                function hideCursor() {
-                    document.getElementById("console").style.display = "none";
-                }
-            
-                typeText("Highly motivated final-year student with a solid foundation in", "intro-text", hideCursor);
 
+            function hideCursor() {
+                document.getElementById("console").style.display = "none";
+            }
+
+            // Start typing animation
+            typeText("Highly motivated final-year student with a solid foundation in", "intro-text", hideCursor);
+
+            // Enhanced Typed.js
+            setTimeout(() => {
                 new Typed('#specialty-text', {
-                    strings: ['Machine Learning', 'Software Development', 'Data Structures'],
+                    strings: [
+                        'Machine Learning 🤖',
+                        'Full Stack Development 💻',
+                        'Data Structures & Algorithms 📊',
+                        'Mobile App Development 📱',
+                        'Cloud Computing ☁️'
+                    ],
                     typeSpeed: 50,
-                    backSpeed: 50,
-                    loop: true
+                    backSpeed: 30,
+                    loop: true,
+                    backDelay: 2000,
+                    showCursor: false
+                });
+            }, 3000);
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(0, 0, 0, 0.9)';
+                    navbar.style.backdropFilter = 'blur(30px)';
+                } else {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                    navbar.style.backdropFilter = 'blur(20px)';
+                }
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 });
             });
+
+            // Ripple effect for buttons
+            document.querySelectorAll('.btn-primary-custom').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const ripple = this.querySelector('.btn-ripple');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('animate');
+                    
+                    setTimeout(() => {
+                        ripple.classList.remove('animate');
+                    }, 600);
+                });
+            });
+
+            // Window resize handler for canvas
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });            
+        });
+        
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
 </body>
 </html>
