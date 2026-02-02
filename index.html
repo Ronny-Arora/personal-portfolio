@@ -71,7 +71,7 @@
                             <span class="code-keyword">const</span> <span class="code-variable">developer</span> = {<br>
                             &nbsp;&nbsp;<span class="code-property">name</span>: <span class="code-string">"Raunak (Ronny) Arora"</span>,<br>
                             &nbsp;&nbsp;<span class="code-property">passion</span>: <span class="code-string">"Creating Amazing Experiences"</span><br>
-                            &nbsp;&nbsp;<span class="code-property">currently</span>: <span class="code-string">"Business Analyst Intern @ Macmahon"</span>
+                            &nbsp;&nbsp;<span class="code-property">currently</span>: <span class="code-string">"Software Engineering Intern @ Infosys"</span>
                             };
                         </div>
                     </div>
@@ -80,16 +80,16 @@
                         Hello, I'm <span class="text-gradient neon-glow">Ronny</span>
                     </div>
                     <div class="hero-subtitle reveal-text">
-                        Software Engineering <span class="text-gradient holographic-text">Student</span>
+                        Software Engineering <span class="text-gradient holographic-text">Graduate</span>
                     </div>
                     <div class="hero-subtitle reveal-text">
-                        At <span class="text-gradient">Curtin University</span>
+                        From <span class="text-gradient">Curtin University</span>
                     </div>
                     
                     <!-- Interactive Stats -->
                     <div class="stats-container">
                         <div class="stat-item glass-card">
-                            <div class="stat-number" data-target="14">0</div>
+                            <div class="stat-number" data-target="17/Users/ronny/Documents/My Resume/RaunakArora_Resume.pdf=7">0</div>
                             <div class="stat-label">HD/Distinction Units</div>
                         </div>
                         <div class="stat-item glass-card">
@@ -97,8 +97,8 @@
                             <div class="stat-label">Hackathon Wins</div>
                         </div>
                         <div class="stat-item glass-card">
-                            <div class="stat-number" data-target="10">0</div>
-                            <div class="stat-label">Projects</div>
+                            <div class="stat-number" data-target="1.5">0</div>
+                            <div class="stat-label">Years Industry Experience</div>
                         </div>
                     </div>
                     
@@ -180,7 +180,7 @@
             <div class="about-content glass-card h-100 w-100">
             <h3 class="text-gradient mb-4">My Journey</h3>
             <p class="mb-4">
-                I'm a passionate final-year Software Engineering student at Curtin University with a strong foundation in full-stack development and machine learning. Currently working as a Business Analyst Intern at Macmahon, I bring a unique blend of technical expertise and business acumen to every project.
+                I'm a 2026 Software Engineering graduate from Curtin University with a strong foundation in full-stack development and machine learning. Currently working as a Software Engineering Intern at Infosys, I bring a unique blend of technical expertise and business acumen to every project.
             </p>
             <p class="mb-4">
                 My journey in tech started with a curiosity about how things work behind the scenes. This curiosity has led me to explore various domains including web development, mobile applications, data science and cloud computing.
@@ -227,7 +227,7 @@
 
                 <div class="achievement-tile">
                 <div class="achievement-icon"><i class="fas fa-medal"></i></div>
-                <h4>14 HD/Distinctions</h4>
+                <h4>17 HD/Distinctions</h4>
                 <p>Consistent high performance across all academic units</p>
                 </div>
 
@@ -240,7 +240,7 @@
                 <div class="achievement-tile">
                 <div class="achievement-icon"><i class="fas fa-briefcase"></i></div>
                 <h4>Industry Experience</h4>
-                <p>Business Analyst Intern at Macmahon Holdings</p>
+                <p>Software Engineering Intern at Infosys & Business Analyst Intern at Macmahon Holdings</p>
                 </div>
             </div>
             </div>
@@ -366,10 +366,10 @@
             </div>
           </div>
           <div class="portfolio-content">
-            <h3>E-Commerce Platform</h3>
-            <p>Full-stack e-commerce solution with React, Node.js, and Stripe integration</p>
+            <h3>Agentic AI Systems & LLM Research</h3>
+            <p>Exploration and prototyping of agentic AI workflows to reduce hallucinations in LLM-based systems.</p>
             <div class="portfolio-tech">
-              <span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Python</span><span class="tech-tag">LLMs</span><span class="tech-tag">FAISS</span><span class="tech-tag">RAG</span>
             </div>
           </div>
         </div>
@@ -856,7 +856,7 @@
                         
                         // Animate counters when stats come into view
                         if (entry.target.classList.contains('stat-number')) {
-                            const target = parseInt(entry.target.getAttribute('data-target'));
+                            const target = parseFloat(entry.target.getAttribute('data-target'));
                             animateCounter(entry.target, target);
                         }
                     }
@@ -896,7 +896,7 @@
             }
 
             // Start typing animation
-            typeText("Highly motivated final-year student with a solid foundation in", "intro-text", hideCursor);
+            typeText("Highly motivated SWE Graduate with a solid foundation in", "intro-text", hideCursor);
 
             // Enhanced Typed.js
             setTimeout(() => {

@@ -42,14 +42,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // Counter animation function
   function animateCounter(el, target, duration = 2000) {
     let start = 0;
+    const isFloat = !Number.isInteger(target);
     const inc = target / (duration / 16);
+
     (function step() {
       start += inc;
       if (start < target) {
-        el.textContent = Math.floor(start);
+        el.textContent = isFloat ? start.toFixed(1) : Math.floor(start);
         requestAnimationFrame(step);
       } else {
-        el.textContent = target;
+        el.textContent = isFloat ? target.toFixed(1) : target;
       }
     })();
   }
@@ -63,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Animate stat counters
         if (entry.target.classList.contains("stat-number")) {
-          const t = parseInt(entry.target.getAttribute("data-target"), 10);
+          const t = parseFloat(entry.target.getAttribute("data-target"), 10);
           animateCounter(entry.target, t);
         }
 
